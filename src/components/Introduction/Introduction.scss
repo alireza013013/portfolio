@@ -1,0 +1,26 @@
+.main-intro {
+    // height: 350px;
+    height: 100vh;
+    background: rgb(137, 143, 247);
+    background: linear-gradient(
+        43deg,
+        rgba(137, 143, 247, 1) 0%,
+        rgba(113, 118, 226, 1) 40%,
+        rgba(82, 88, 204, 1) 100%
+    );
+    padding: 100px 16px 0 16px;
+    display: flex;
+    justify-content: space-between;
+    .text-intro-div {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        span {
+            color: white;
+            font-size: 50px;
+            font-weight: bold;
+            text-wrap: nowrap;
+        }
+    }
+}
