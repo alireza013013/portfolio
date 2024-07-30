@@ -8,10 +8,11 @@
         rgba(113, 118, 226, 1) 40%,
         rgba(82, 88, 204, 1) 100%
     );
-    padding: 100px 16px 0 16px;
+    padding: 100px 0 0 0;
     display: flex;
     justify-content: space-between;
     .text-intro-div {
+        position: absolute;
         width: 50%;
         display: flex;
         flex-direction: column;
