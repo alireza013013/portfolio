@@ -1,6 +1,8 @@
+@import "../../styles/references/index";
+
 .main-intro {
-    // height: 350px;
-    height: 100vh;
+    height: 600px;
+    // height: 100vh;
     background: rgb(137, 143, 247);
     background: linear-gradient(
         43deg,
@@ -8,20 +10,40 @@
         rgba(113, 118, 226, 1) 40%,
         rgba(82, 88, 204, 1) 100%
     );
-    padding: 100px 0 0 0;
     display: flex;
     justify-content: space-between;
+    @include responsive-size(padding, 50px 0 0 0, 50px 0 0 0, 20px 0 0 0, 20px 0 0 0);
     .text-intro-div {
         position: absolute;
         width: 50%;
         display: flex;
         flex-direction: column;
         align-items: flex-start;
+        margin: 64px 0 0 32px;
+        z-index: 2;
         span {
             color: white;
-            font-size: 50px;
             font-weight: bold;
             text-wrap: nowrap;
+            @include responsive-size(font-size, 50px, 40px, 30px, 28px);
+            // .name {
+            // }
+        }
+        button {
+            border-radius: 12px;
+            border: none;
+            cursor: pointer;
+            background-color: #a3c9d4;
+            color: white;
+            transition: all;
+            margin-top: 20px;
+            font-weight: bold;
+            @include responsive-size(width, 120px, 120px, 80px, 80px);
+            @include responsive-size(height, 40px, 40px, 30px, 30px);
+            @include responsive-size(font-size, 18px, 18px, 14px, 14px);
+        }
+        button:active {
+            transform: scale(0.9);
         }
     }
 }

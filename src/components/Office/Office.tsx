@@ -1,5 +1,9 @@
 import { useGLTF, useTexture, useVideoTexture } from "@react-three/drei";
 import * as THREE from "three";
+import { Mesh } from "three"
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
+import { useRef } from "react";
 
 export const Office = (props: any) => {
   const { nodes } = useGLTF("models/scene.gltf");
@@ -22,9 +26,32 @@ export const Office = (props: any) => {
   });
 
 
+  const office = useRef(null!)
+  const desk = useRef(null!)
+  const tree = useRef(null!)
+  const chair = useRef(null!)
+  const carpet = useRef(null!)
+
+  useGSAP(
+    () => {
+      const tl = gsap.timeline({});
+      tl.from((office.current as Mesh).position,
+        { x: 100, y: 0, z: 0, duration: 1 })
+        .from([(desk.current as Mesh).scale,
+        (tree.current as Mesh).scale,
+        (chair.current as Mesh).scale,
+        ],
+          {
+            x: 0, y: 0, z: 0, duration: 1
+          })
+        ;
+    },
+    []
+  );
+
 
   return (
-    <group {...props} dispose={null}>
+    <group {...props} dispose={null} ref={office}>
       <mesh
         name="Screen"
         geometry={(nodes.Screen as any).geometry}
@@ -37,6 +64,7 @@ export const Office = (props: any) => {
         name="Desk"
         position={[-0.07, 0, -1.52]}
         rotation={[0, -Math.PI / 2, 0]}
+        ref={desk}
       >
         <mesh
           name="Plane001_Plane002_BlackWood001"
@@ -101,6 +129,7 @@ export const Office = (props: any) => {
         geometry={(nodes.WawaRug as any).geometry}
         material={textureMaterial}
         position={[-0.28, 0.01, 0.76]}
+        ref={carpet}
       />
       <group
         name="salameche"
@@ -229,6 +258,7 @@ export const Office = (props: any) => {
         />
       </group>
       <group
+        ref={tree}
         name="palm_tree_01"
         position={[2.13, -0.08, -1.06]}
         rotation={[-Math.PI, 0.67, -Math.PI]}
@@ -250,6 +280,7 @@ export const Office = (props: any) => {
         />
       </group>
       <group
+        ref={chair}
         name="Chair"
         position={[0.09, -0.02, -0.66]}
         rotation={[0, -0.35, 0]}
@@ -285,7 +316,7 @@ export const Office = (props: any) => {
         geometry={(nodes.Plane001_3 as any).geometry}
         material={textureGlassMaterial}
       />
-    </group>
+    </group >
   );
 }
 
