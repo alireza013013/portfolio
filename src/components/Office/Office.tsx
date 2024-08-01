@@ -31,18 +31,25 @@ export const Office = (props: any) => {
   const tree = useRef(null!)
   const chair = useRef(null!)
   const carpet = useRef(null!)
+  const mouse = useRef(null!)
+  const keyboard = useRef(null!)
+  const imac = useRef(null!)
+
 
   useGSAP(
     () => {
       const tl = gsap.timeline({});
       tl.from((office.current as Mesh).position,
-        { x: 100, y: 0, z: 0, duration: 1 })
+        { x: 100, y: 0, z: 0, duration: 1, ease: "back.out(0.6)", })
         .from([(desk.current as Mesh).scale,
         (tree.current as Mesh).scale,
         (chair.current as Mesh).scale,
+        (mouse.current as Mesh).scale,
+        (imac.current as Mesh).scale,
+        (keyboard.current as Mesh).scale,
         ],
           {
-            x: 0, y: 0, z: 0, duration: 1
+            x: 0, y: 0, z: 0, duration: 1, ease: "back.out(1.5)",
           })
         ;
     },
@@ -172,6 +179,7 @@ export const Office = (props: any) => {
         position={[0.21, 0.98, -1.26]}
         rotation={[0, -0.22, 0]}
         scale={0.63}
+        ref={keyboard}
       >
         <mesh
           name="mesh425587018"
@@ -198,6 +206,7 @@ export const Office = (props: any) => {
         name="iMac"
         position={[0.45, 0.94, -1.72]}
         rotation={[Math.PI, -1.1, Math.PI]}
+        ref={imac}
       >
         <mesh
           name="iMac_1_1"
@@ -215,6 +224,7 @@ export const Office = (props: any) => {
         geometry={(nodes.Comp_Mouse as any).geometry}
         material={textureMaterial}
         position={[0.05, 0, 0.02]}
+        ref={mouse}
       />
       <group
         name="plant"
@@ -321,3 +331,4 @@ export const Office = (props: any) => {
 }
 
 useGLTF.preload("models/scene.gltf");
+useTexture.preload("textures/baked.jpg");

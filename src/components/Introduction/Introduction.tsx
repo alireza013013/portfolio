@@ -15,6 +15,7 @@ export const Introduction = () => {
                 y: "+=50",
                 duration: 1,
                 stagger: 0.5,
+                ease: "back.out(5)",
             })
         },
         { scope: contaierTexts }
@@ -29,7 +30,7 @@ export const Introduction = () => {
                 <span id="job">Front End Developer</span>
                 <button id="button">Hire Me</button>
             </div>
-            <Canvas shadows camera={{ position: [0, 3, 10], fov: 42 }}>
+            <Canvas resize={{ scroll: false }} shadows camera={{ position: [0, 3, 10], fov: 42 }}>
                 <CoodingScene />
             </Canvas>
         </div>

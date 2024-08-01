@@ -37,7 +37,7 @@ export const Avatar = (props: any) => {
   useGSAP(
     () => {
       const tl = gsap.timeline({});
-      tl.from(group.current.scale, { x: 0, y: 1, z: 0, duration: 1, delay: 1 });
+      tl.from(group.current.scale, { x: 0, y: 1, z: 0, duration: 1, delay: 1, ease: "back.out(1.7)", });
     },
     []
   );
@@ -61,3 +61,6 @@ export const Avatar = (props: any) => {
 }
 
 useGLTF.preload('models/Avatar.glb')
+useFBX.preload("animations/Typing.fbx")
+useFBX.preload("animations/Standing.fbx")
+useFBX.preload("animations/FallingRoll.fbx")
