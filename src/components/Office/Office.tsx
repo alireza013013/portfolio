@@ -4,6 +4,8 @@ import { Mesh } from "three"
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { useRef } from "react";
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+gsap.registerPlugin(ScrollTrigger);
 
 export const Office = (props: any) => {
   const { nodes } = useGLTF("models/scene.gltf");
@@ -38,9 +40,18 @@ export const Office = (props: any) => {
 
   useGSAP(
     () => {
-      const tl = gsap.timeline({});
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: "#canvas",
+          start: "center bottom",
+          end: "40% top",
+          toggleActions: "play reverse restart none",
+        }
+      });
       tl.from((office.current as Mesh).position,
-        { x: 100, y: 0, z: 0, duration: 1, ease: "back.out(0.6)", })
+        {
+          x: 100, y: 0, z: 0, duration: 1, ease: "back.out(0.6)",
+        })
         .from([(desk.current as Mesh).scale,
         (tree.current as Mesh).scale,
         (chair.current as Mesh).scale,

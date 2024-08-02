@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { useGraph } from '@react-three/fiber'
 import { useAnimations, useFBX, useGLTF } from '@react-three/drei'
 import { SkeletonUtils } from 'three-stdlib'
@@ -19,24 +19,46 @@ export const Avatar = (props: any) => {
   const group = useRef<Mesh>(null!)
   const { animations: typingAnimation } = useFBX("animations/Typing.fbx")
   const { animations: standingAnimation } = useFBX("animations/Standing.fbx")
-  const { animations: fallingAnimation } = useFBX("animations/FallingRoll.fbx")
+  const { animations: fallingAnimation } = useFBX("animations/Falling.fbx")
   typingAnimation[0].name = "Typing"
   standingAnimation[0].name = "Standing"
   fallingAnimation[0].name = "Falling"
 
   const { actions } = useAnimations([typingAnimation[0], standingAnimation[0], fallingAnimation[0]], group)
 
+  const [animationSelect, setAnimationSelect] = useState("Typing")
+
+
   useEffect(() => {
-    actions[props.animation]?.reset().fadeIn(0.5).play()
+    actions[animationSelect]?.reset().fadeIn(0.5).play()
 
     return () => {
-      actions[props.animation]?.reset().fadeOut(0.5)
+      actions[animationSelect]?.reset().fadeOut(0.5)
     }
-  }, [props.animation])
+  }, [animationSelect])
 
   useGSAP(
     () => {
-      const tl = gsap.timeline({});
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: "#canvas",
+          start: "top bottom",
+          end: "40% top",
+          // toggleActions: "play reverse restart none",
+          onEnter: () => {
+            setAnimationSelect("Typing")
+            console.log("Enter");
+          },
+          onLeave: (self) => {
+            setAnimationSelect("Falling")
+            console.log(self, "Leave");
+          },
+          onEnterBack: () => {
+            console.log("On enter back");
+            setAnimationSelect("Typing")
+          }
+        }
+      });
       tl.from(group.current.scale, { x: 0, y: 1, z: 0, duration: 1, delay: 1, ease: "back.out(1.7)", });
     },
     []
@@ -63,4 +85,4 @@ export const Avatar = (props: any) => {
 useGLTF.preload('models/Avatar.glb')
 useFBX.preload("animations/Typing.fbx")
 useFBX.preload("animations/Standing.fbx")
-useFBX.preload("animations/FallingRoll.fbx")
+useFBX.preload("animations/Falling.fbx")

@@ -9,12 +9,12 @@ import { Mesh } from 'three'
 
 export const CoodingScene = () => {
 
-    const { animation } = useControls({
-        animation: {
-            value: "Typing",
-            options: ["Typing", "Standing", "Falling"]
-        }
-    })
+    // const { animation } = useControls({
+    //     animation: {
+    //         value: "Typing",
+    //         options: ["Typing", "Standing", "Falling"]
+    //     }
+    // })
     const { viewport } = useThree()
 
     const isMobile = window.innerWidth < 768;
@@ -33,9 +33,9 @@ export const CoodingScene = () => {
     return (
         <>
             <ambientLight intensity={1} />
-            <OrbitControls />
+            {/* <OrbitControls /> */}
             <group ref={avatar} scale={[sceneScaleRatio, sceneScaleRatio, sceneScaleRatio]} rotation={[-3.141592653589793, 1.22, -3.141592653589793]}>
-                <Avatar animation={animation} />
+                <Avatar />
             </group>
             <group position={[isMobile ? 0 : 1.5, isMobile ? -viewport.height / 20 : 0, 3]} scale={[sceneScaleRatio, sceneScaleRatio, sceneScaleRatio]} rotation-y={-Math.PI / 4}>
                 <Office />
