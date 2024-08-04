@@ -6,10 +6,6 @@ import { Mesh } from 'three'
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 
-// interface propAvatar {
-//   animation: string
-// }
-
 
 export const Avatar = (props: any) => {
   const { scene } = useGLTF('models/Avatar.glb')
@@ -37,6 +33,7 @@ export const Avatar = (props: any) => {
     }
   }, [animationSelect])
 
+
   useGSAP(
     () => {
       const tl = gsap.timeline({
@@ -44,19 +41,7 @@ export const Avatar = (props: any) => {
           trigger: "#canvas",
           start: "top bottom",
           end: "40% top",
-          // toggleActions: "play reverse restart none",
-          onEnter: () => {
-            setAnimationSelect("Typing")
-            console.log("Enter");
-          },
-          onLeave: (self) => {
-            setAnimationSelect("Falling")
-            console.log(self, "Leave");
-          },
-          onEnterBack: () => {
-            console.log("On enter back");
-            setAnimationSelect("Typing")
-          }
+          toggleActions: "play reverse restart none",
         }
       });
       tl.from(group.current.scale, { x: 0, y: 1, z: 0, duration: 1, delay: 1, ease: "back.out(1.7)", });

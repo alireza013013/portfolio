@@ -1,7 +1,81 @@
+@import "../../styles/references/index";
+
 .main-experience {
-    height: 1000px;
-    // height: 100vh;
-    background: blue;
+    // height: 500px;
+    // background: rgb(224, 225, 247);
     display: flex;
+    align-items: center;
     justify-content: space-between;
+    flex-direction: column;
+    flex-wrap: wrap;
+    row-gap: 50px;
+    padding: 50px 100px;
+    position: relative;
+    .guid-line {
+        position: absolute;
+        transition: all;
+        height: 0;
+        width: 6px;
+        border-radius: 6px;
+        background: white;
+    }
+    .card-experience {
+        width: 400px;
+        height: 170px;
+        border-radius: 12px;
+        background-color: white;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        padding: 20px 10px;
+        row-gap: 6px;
+        .circle {
+            min-width: 24px;
+            min-height: 24px;
+            border-radius: 50%;
+            background: black;
+            position: absolute;
+        }
+        .date-logo {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            .date {
+                font-weight: bold;
+                color: black;
+                @include responsive-size(font-size, 18px, 18px, 14px, 14px);
+            }
+            img {
+                width: 60px;
+                height: 60px;
+                border-radius: 50%;
+            }
+        }
+        .position {
+            color: black;
+            font-weight: bold;
+            @include responsive-size(font-size, 22px, 22px, 20px, 20px);
+        }
+        .desc {
+            color: black;
+            @include responsive-size(font-size, 16px, 16px, 12px, 12px);
+        }
+    }
+    .nitc {
+        transform: translate(-230px, 0px);
+        .circle {
+            right: -32px;
+            top: -2px;
+        }
+    }
+    .payesh {
+        transform: translate(230px, 0px);
+        .circle {
+            left: -32px;
+            top: -2px;
+        }
+    }
 }

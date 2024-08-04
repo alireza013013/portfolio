@@ -3,13 +3,13 @@
 .main-intro {
     height: 600px;
     // height: 100vh;
-    background: rgb(137, 143, 247);
-    background: linear-gradient(
-        43deg,
-        rgba(137, 143, 247, 1) 0%,
-        rgba(113, 118, 226, 1) 40%,
-        rgba(82, 88, 204, 1) 100%
-    );
+    // background: rgb(137, 143, 247);
+    // background: linear-gradient(
+    //     43deg,
+    //     rgba(137, 143, 247, 1) 0%,
+    //     rgba(113, 118, 226, 1) 40%,
+    //     rgba(82, 88, 204, 1) 100%
+    // );
     display: flex;
     justify-content: space-between;
     @include responsive-size(padding, 50px 0 0 0, 50px 0 0 0, 20px 0 0 0, 20px 0 0 0);

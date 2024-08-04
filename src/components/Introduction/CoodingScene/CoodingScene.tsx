@@ -1,6 +1,4 @@
 import { useFrame, useThree } from '@react-three/fiber'
-import { OrbitControls } from '@react-three/drei'
-import { useControls } from 'leva'
 import { Avatar } from '../../Avatar/Avatar'
 import { Office } from '../../Office/Office'
 import { useRef } from 'react'
@@ -9,12 +7,6 @@ import { Mesh } from 'three'
 
 export const CoodingScene = () => {
 
-    // const { animation } = useControls({
-    //     animation: {
-    //         value: "Typing",
-    //         options: ["Typing", "Standing", "Falling"]
-    //     }
-    // })
     const { viewport } = useThree()
 
     const isMobile = window.innerWidth < 768;
@@ -33,7 +25,6 @@ export const CoodingScene = () => {
     return (
         <>
             <ambientLight intensity={1} />
-            {/* <OrbitControls /> */}
             <group ref={avatar} scale={[sceneScaleRatio, sceneScaleRatio, sceneScaleRatio]} rotation={[-3.141592653589793, 1.22, -3.141592653589793]}>
                 <Avatar />
             </group>

@@ -29,26 +29,6 @@ export const Introduction = () => {
         { scope: contaierTexts }
     );
 
-    // useGSAP(
-    //     () => {
-    //         gsap.to(['#test', '#hello', '#name', '#job', '#button'], {
-    //             opacity: 0,
-    //             y: "+=50",
-    //             duration: 1,
-    //             stagger: 0.5,
-    //             ease: "back.out(5)",
-    //             scrollTrigger: {
-    //                 trigger: contaierTexts.current,
-    //                 start: "top top",
-    //                 end: "=+200 bottom",
-    //                 scrub: 10,
-    //                 markers: true,
-    //             }
-    //         })
-    //     },
-    //     { scope: contaierTexts }
-    // );
-
     return (
         <div className="main-intro" id='main-intro'>
             <div className='text-intro-div' ref={contaierTexts}>
@@ -57,7 +37,7 @@ export const Introduction = () => {
                 <span id="job">Front End Developer</span>
                 <button id="button">Hire Me</button>
             </div>
-            <Canvas id='canvas' resize={{ scroll: false }} shadows camera={{ position: [0, 3, 10], fov: 42 }}>
+            <Canvas id='canvas' resize={{ scroll: false }} shadows camera={{ position: [0, 3, 10.5], fov: 42 }}>
                 <CoodingScene />
             </Canvas>
         </div>
