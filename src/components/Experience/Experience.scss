@@ -1,16 +1,15 @@
 @import "../../styles/references/index";
 
 .main-experience {
-    // height: 500px;
-    // background: rgb(224, 225, 247);
     display: flex;
     align-items: center;
     justify-content: space-between;
     flex-direction: column;
     flex-wrap: wrap;
     row-gap: 50px;
-    padding: 50px 100px;
     position: relative;
+    @include responsive-size(width, unset, unset, unset, 300px);
+    @include responsive-size(padding, 40px, 40px, 40px, 10px 0);
     .guid-line {
         position: absolute;
         transition: all;
@@ -18,10 +17,9 @@
         width: 6px;
         border-radius: 6px;
         background: white;
+        @include responsive-size(left, unset, unset, unset, 0);
     }
     .card-experience {
-        width: 400px;
-        height: 170px;
         border-radius: 12px;
         background-color: white;
         position: relative;
@@ -29,8 +27,11 @@
         flex-direction: column;
         align-items: flex-start;
         justify-content: center;
-        padding: 20px 10px;
         row-gap: 6px;
+        max-width: 400px;
+        @include responsive-size(width, 400px, 320px, 230px, 82%);
+        @include responsive-size(height, 170px, 170px, 140px, 140px);
+        @include responsive-size(padding, 20px 10px, 20px 10px, 10px, 10px);
         .circle {
             min-width: 24px;
             min-height: 24px;
@@ -46,36 +47,37 @@
             .date {
                 font-weight: bold;
                 color: black;
-                @include responsive-size(font-size, 18px, 18px, 14px, 14px);
+                @include responsive-size(font-size, 18px, 16px, 14px, 14px);
             }
             img {
-                width: 60px;
-                height: 60px;
                 border-radius: 50%;
+                @include responsive-size(width, 60px, 50px, 40px, 40px);
+                @include responsive-size(height, 60px, 50px, 40px, 40px);
             }
         }
         .position {
             color: black;
             font-weight: bold;
-            @include responsive-size(font-size, 22px, 22px, 20px, 20px);
+            @include responsive-size(font-size, 22px, 20px, 18px, 14px);
         }
         .desc {
             color: black;
-            @include responsive-size(font-size, 16px, 16px, 12px, 12px);
+            @include responsive-size(font-size, 16px, 14px, 10px, 10px);
         }
     }
     .nitc {
-        transform: translate(-230px, 0px);
+        @include responsive-size(margin-left, -460px, -380px, -290px, 0);
         .circle {
-            right: -32px;
             top: -2px;
+            @include responsive-size(left, unset, unset, unset, -26px);
+            @include responsive-size(right, -32px, -32px, -32px, unset);
         }
     }
     .payesh {
-        transform: translate(230px, 0px);
+        @include responsive-size(margin-right, -460px, -380px, -290px, 0);
         .circle {
-            left: -32px;
             top: -2px;
+            @include responsive-size(left, -32px, -32px, -32px, -26px);
         }
     }
 }

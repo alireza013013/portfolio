@@ -11,7 +11,7 @@ export const Experience = () => {
     useGSAP(
         () => {
             gsap.to("#guid", {
-                height: '84%',
+                height: '90%',
                 duration: 5,
                 scrollTrigger: {
                     trigger: "#main-experience",

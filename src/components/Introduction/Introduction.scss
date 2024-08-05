@@ -2,6 +2,7 @@
 
 .main-intro {
     height: 600px;
+    width: 100%;
     // height: 100vh;
     // background: rgb(137, 143, 247);
     // background: linear-gradient(
@@ -19,8 +20,8 @@
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        margin: 64px 0 0 32px;
         z-index: 2;
+        @include responsive-size(margin, 64px 0 0 32px, 64px 0 0 32px, 64px 0 0 32px, 64px 0 0 12px);
         span {
             color: white;
             font-weight: bold;
