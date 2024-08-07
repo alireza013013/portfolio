@@ -1,4 +1,15 @@
+@import "../../styles/references/index";
+
 .main-skills {
-    height: 500px;
-    // background-color: white;
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 100px;
+    row-gap: 10px;
+    column-gap: 10px;
+    .ball-container {
+        @include responsive-size(width, 150px, 100px, 80px, 60px);
+        @include responsive-size(height, 150px, 100px, 80px, 60px);
+    }
 }
