@@ -35,7 +35,7 @@ export const Introduction = () => {
                 <span id="hello">HELLO,</span>
                 <span id="name">I'm  <span className='name'>Alireza</span></span>
                 <span id="job">Front End Developer</span>
-                <button id="button">Hire Me</button>
+                <button className='hire' id="button">Hire Me</button>
             </div>
             <Canvas id='canvas' resize={{ scroll: false }} shadows camera={{ position: [0, 3, 10.5], fov: 42 }}>
                 <CoodingScene />

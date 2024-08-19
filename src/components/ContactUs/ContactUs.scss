@@ -1,4 +1,124 @@
+@import "../../styles/references/index";
+
 .main-contact {
-    height: 1000px;
     width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+    margin-bottom: 100px;
+
+    .container-contact {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @include responsive-size(padding, 40px, 40px, 10px, 10px);
+
+        .form-div {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            max-width: 400px;
+            border-radius: 12px;
+            background-color: white;
+            padding: 20px;
+            @include responsive-size(width, 50%, 50%, 100%, 100%);
+
+            .title {
+                color: black;
+                font-weight: bold;
+                @include responsive-size(font-size, 28px, 28px, 22px, 22px);
+            }
+
+            .contain-input {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                row-gap: 12px;
+                margin-top: 6px;
+                .input-title {
+                    color: #707070;
+                    font-weight: bold;
+                    @include responsive-size(font-size, 18px, 18px, 14px, 14px);
+                }
+                .inputs {
+                    width: -moz-available;
+                    width: -webkit-fill-available;
+                    background-color: transparent;
+                    border-radius: 8px;
+                    border: 2px solid #707070;
+                    padding: 8px 12px;
+                    display: flex;
+                    align-items: center;
+                }
+                .inputs:focus {
+                    outline: none;
+                    border: 2px solid #707070;
+                }
+                textarea {
+                    width: -moz-available;
+                    width: -webkit-fill-available;
+                    resize: none;
+                    max-height: 114px;
+                    min-height: 114px;
+                    background-color: transparent;
+                    border-radius: 8px;
+                    border: 2px solid #707070;
+                    padding: 8px 12px;
+                    display: flex;
+                    align-items: center;
+
+                    &::-webkit-calendar-picker-indicator {
+                        cursor: pointer;
+                    }
+
+                    &:focus {
+                        outline: none;
+                        border: 2px solid #707070;
+                    }
+                }
+            }
+
+            .success {
+                margin-top: 6px;
+                color: #4bb543;
+                font-weight: bold;
+                @include responsive-size(font-size, 18px, 18px, 14px, 14px);
+            }
+
+            .error {
+                margin-top: 6px;
+                color: #b00020;
+                font-weight: bold;
+                @include responsive-size(font-size, 18px, 18px, 14px, 14px);
+            }
+
+            .send {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 12px;
+                border: none;
+                cursor: pointer;
+                background-color: #a3c9d4;
+                color: white;
+                transition: all;
+                margin-top: 20px;
+                font-weight: bold;
+                @include responsive-size(width, 120px, 120px, 80px, 80px);
+                @include responsive-size(height, 40px, 40px, 30px, 30px);
+                @include responsive-size(font-size, 18px, 18px, 14px, 14px);
+                &:active {
+                    transform: scale(0.9) !important;
+                }
+                .loading {
+                    @include responsive-size(width, 60px, 60px, 50px, 50px);
+                    @include responsive-size(height, 60px, 60px, 50px, 50px);
+                }
+            }
+        }
+    }
 }
