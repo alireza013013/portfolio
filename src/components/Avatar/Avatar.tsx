@@ -22,7 +22,7 @@ export const Avatar = (props: any) => {
 
   const { actions } = useAnimations([typingAnimation[0], standingAnimation[0], fallingAnimation[0]], group)
 
-  const [animationSelect, setAnimationSelect] = useState("Typing")
+  const [animationSelect] = useState("Typing")
 
 
   useEffect(() => {

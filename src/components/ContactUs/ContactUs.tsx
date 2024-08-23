@@ -74,7 +74,7 @@ export const ContactUs = () => {
         }
 
         emailjs.send(serviceId, templateId, templateParams, publicKey)
-            .then((response) => {
+            .then(() => {
                 setShowSuccess(true)
                 setIsLoading(false)
                 setName('')
@@ -83,7 +83,7 @@ export const ContactUs = () => {
                 setTimeout(() => {
                     setShowSuccess(false)
                 }, 5000);
-            }).catch((error) => {
+            }).catch(() => {
                 setShowFail(true)
                 setIsLoading(false)
                 setName('')
