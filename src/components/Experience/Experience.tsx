@@ -14,7 +14,7 @@ export const Experience = () => {
                 height: '90%',
                 duration: 5,
                 scrollTrigger: {
-                    trigger: "#main-experience",
+                    trigger: "#experience",
                     start: "top 60%",
                     end: "center center",
                     scrub: 1,
@@ -25,7 +25,7 @@ export const Experience = () => {
                 y: 100,
                 duration: 5,
                 scrollTrigger: {
-                    trigger: "#main-experience",
+                    trigger: "#experience",
                     start: "top 90%",
                     end: "center center",
                     scrub: 1,
@@ -36,7 +36,7 @@ export const Experience = () => {
                 y: 100,
                 duration: 5,
                 scrollTrigger: {
-                    trigger: "#main-experience",
+                    trigger: "#experience",
                     start: "top center",
                     end: "center center",
                     scrub: 1,
@@ -48,7 +48,7 @@ export const Experience = () => {
 
 
     return (
-        <div className="main-experience" id="main-experience">
+        <div className="main-experience" id="experience">
             <div className='guid-line' id='guid'>
             </div>
             <div className='card-experience nitc' id="nitc">

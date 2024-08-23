@@ -52,7 +52,7 @@ const BallCanvas = ({ icon }: { icon: string }) => {
 
 export const Skills = () => {
     return (
-        <div className="main-skills">
+        <div className="main-skills" id='skills'>
             {technologies.map((technology) => (
                 <div className='ball-container' key={technology.name} id={technology.name}>
                     <BallCanvas icon={technology.icon} />

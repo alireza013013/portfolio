@@ -1,5 +1,47 @@
+@import "../../styles/references/index";
+
 .header {
-    position: absolute;
-    top: 0;
-    height: 100px;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    position: fixed;
+    background-color: #0000007d;
+    z-index: 5;
+    .menu {
+        width: 200px;
+        height: 100%;
+        background-color: white;
+        border-radius: 20px 0 0 20px;
+        position: fixed;
+        right: 0;
+        z-index: 6;
+        display: flex;
+        flex-direction: column;
+        padding: 10px 20px;
+        .close-button {
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+            img {
+                width: 30px;
+                height: 30px;
+                filter: invert(32%) sepia(89%) saturate(1348%) hue-rotate(221deg) brightness(84%) contrast(89%);
+            }
+        }
+
+        .menu-item {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin-top: 100px;
+            row-gap: 6px;
+            .item {
+                font-weight: bold;
+                color: black;
+                font-size: 20px;
+                text-decoration: none;
+            }
+        }
+    }
 }

@@ -5,7 +5,9 @@ import { useRef } from 'react'
 import { Mesh } from 'three'
 
 
-export const CoodingScene = () => {
+export const CoodingScene = (props: {
+    isOpen: boolean
+}) => {
 
     const { viewport } = useThree()
 
@@ -26,7 +28,7 @@ export const CoodingScene = () => {
         <>
             <ambientLight intensity={1} />
             <group ref={avatar} scale={[sceneScaleRatio, sceneScaleRatio, sceneScaleRatio]} rotation={[-3.141592653589793, 1.22, -3.141592653589793]}>
-                <Avatar />
+                <Avatar isOpen={props.isOpen} />
             </group>
             <group position={[isMobile ? 0 : 1.5, isMobile ? -viewport.height / 20 : 0, 3]} scale={[sceneScaleRatio, sceneScaleRatio, sceneScaleRatio]} rotation-y={-Math.PI / 4}>
                 <Office />

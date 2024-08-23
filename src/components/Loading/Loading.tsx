@@ -1,5 +1,6 @@
 import { useProgress } from "@react-three/drei"
 import { useEffect } from "react"
+import './Loading.scss'
 
 export const Loading = (props: {
     loaded: boolean,
@@ -15,8 +16,10 @@ export const Loading = (props: {
     }, [progress])
 
     return (
-        <>
-            Loading
-        </>
+        <div className="main-loading">
+            <span className="progress">{progress.toFixed(0)}%</span>
+            <div className="loader">
+            </div>
+        </div>
     )
 }

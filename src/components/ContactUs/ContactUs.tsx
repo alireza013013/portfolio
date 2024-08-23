@@ -24,14 +24,13 @@ export const ContactUs = () => {
         () => {
             gsap.from(['#form'], {
                 opacity: 0,
-                x: "+=200",
+                y: "+=50",
                 duration: 1,
                 stagger: 0.5,
                 ease: "back.out(5)",
                 scrollTrigger: {
                     trigger: "#form",
                     start: "+=200 bottom",
-                    end: "5% top",
                     toggleActions: "play reverse restart reverse",
                 }
             })
@@ -97,7 +96,7 @@ export const ContactUs = () => {
     }
 
     return (
-        <div className="main-contact">
+        <div className="main-contact" id='contact'>
             <div className='container-contact' id="form">
                 <div className='form-div'>
                     <span className='title'>Contact Us</span>

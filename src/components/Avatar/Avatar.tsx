@@ -26,12 +26,11 @@ export const Avatar = (props: any) => {
 
 
   useEffect(() => {
-    actions[animationSelect]?.reset().fadeIn(0.5).play()
-
+    actions[animationSelect]?.reset().play()
     return () => {
-      actions[animationSelect]?.reset().fadeOut(0.5)
+      actions[animationSelect]?.reset()
     }
-  }, [animationSelect])
+  }, [animationSelect, props.isOpen])
 
 
   useGSAP(

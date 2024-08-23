@@ -7,7 +7,9 @@ import { useRef } from 'react';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
-export const Introduction = () => {
+export const Introduction = (props: {
+    isOpen: boolean
+}) => {
     const contaierTexts = useRef(null!)
 
     useGSAP(
@@ -30,15 +32,15 @@ export const Introduction = () => {
     );
 
     return (
-        <div className="main-intro" id='main-intro'>
+        <div className="main-intro" id='home'>
             <div className='text-intro-div' ref={contaierTexts}>
                 <span id="hello">HELLO,</span>
                 <span id="name">I'm  <span className='name'>Alireza</span></span>
                 <span id="job">Front End Developer</span>
-                <button className='hire' id="button">Hire Me</button>
+                <button className='hire' id="button"><a href='#contact'>Hire Me</a></button>
             </div>
             <Canvas id='canvas' resize={{ scroll: false }} shadows camera={{ position: [0, 3, 10.5], fov: 42 }}>
-                <CoodingScene />
+                <CoodingScene isOpen={props.isOpen} />
             </Canvas>
         </div>
     )

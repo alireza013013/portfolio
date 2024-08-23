@@ -6,36 +6,32 @@ import playIcon from "../../assets/play-solid.svg"
 import gsap from 'gsap';
 import { useGSAP, } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+import { Link } from 'react-router-dom'
 gsap.registerPlugin(ScrollTrigger);
 
 export const CardProject = (props: {
     imgSrc: string,
-    video: string,
     name: string,
     description: string,
     id: string
 }) => {
-
     return (
-        <div className='card-project' id={props.id}>
+        <Link to={`video/${props.id}`} className='card-project' id={props.id}>
             <img className='background' src={props.imgSrc} alt="Rent Home" />
             <div className='info-div'>
                 <span className='title'>{props.name}</span>
                 <span className='des'>{props.description}</span>
             </div>
             <button className='circle-play'>
-                <a href={props.video} target='_blank'></a>
                 <img className='play' src={playIcon} alt="Play" />
             </button>
-        </div>
-
+        </Link>
     )
 }
 
 
 
 export const Projects = () => {
-
     useGSAP(
         () => {
             gsap.from(['#title', '#description'], {
@@ -45,7 +41,7 @@ export const Projects = () => {
                 stagger: 0.5,
                 ease: "back.out(5)",
                 scrollTrigger: {
-                    trigger: "#main-projects",
+                    trigger: "#project",
                     start: "+=100 bottom",
                     end: "5% top",
                     toggleActions: "play reverse restart reverse",
@@ -67,13 +63,8 @@ export const Projects = () => {
             })
         },
     );
-
-
-
-
-
     return (
-        <div className='main-projects' id='main-projects'>
+        <div className='main-projects' id='project'>
             <div className='title-des-div'>
                 <span className='title' id='title'>Projects</span>
                 <span className='subtitle' id='description'>In this section, you can explore the projects I've completed so far. Each project tells a story—from the challenges I've faced to the creative solutions I've implemented. I hope these projects reflect my skills and passion for programming.</span>
@@ -81,19 +72,16 @@ export const Projects = () => {
             <div className='contain-cards' id='contain-cards'>
                 <CardProject
                     id='rentHome'
-                    video="https://drive.google.com/file/d/1dBw7oM07d2wWWP4Id6nuC_DqQoPXL4nz/view"
                     imgSrc={rentHome}
                     name='Rent Home'
                     description='The goal of this project is to display houses and provide the option to rent or buy them.' />
                 <CardProject
                     id='herbal'
-                    video="https://drive.google.com/file/d/1PhNETcrTL81CPggsREkFBN2dxJmPagOp/view?usp=sharing"
                     imgSrc={herbal}
                     name='Sporting goods store'
                     description='This was a store project where sports products were sold. In this project, in addition to speed, SEO was also very important, and both aspects were successfully achieved.' />
                 <CardProject
                     id='spgtel'
-                    video="https://drive.google.com/file/d/1-4Gn9HqEMI2oezHH4VV61EP2OAwxq56z/view?usp=sharing"
                     imgSrc={spgtel}
                     name='Sensor Monitoring'
                     description='The goal of the project was to register sensors within the system, collect their data, and display it in various tables and charts. ' />
