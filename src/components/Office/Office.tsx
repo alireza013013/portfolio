@@ -8,9 +8,9 @@ import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 export const Office = (props: any) => {
-  const { nodes } = useGLTF("models/scene.gltf");
-  const texture = useTexture("textures/baked.jpg");
-  const textureVSCode = useVideoTexture("textures/vscode.mp4");
+  const { nodes } = useGLTF("./models/scene.gltf");
+  const texture = useTexture("./textures/baked.jpg");
+  const textureVSCode = useVideoTexture("./textures/vscode.mp4");
 
   texture.flipY = false;
   (texture as any).encoding = (THREE as any).sRGBEncoding;
@@ -341,5 +341,5 @@ export const Office = (props: any) => {
   );
 }
 
-useGLTF.preload("models/scene.gltf");
-useTexture.preload("textures/baked.jpg");
+useGLTF.preload("./models/scene.gltf");
+useTexture.preload("./textures/baked.jpg");

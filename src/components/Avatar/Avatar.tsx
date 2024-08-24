@@ -8,14 +8,14 @@ import { useGSAP } from '@gsap/react';
 
 
 export const Avatar = (props: any) => {
-  const { scene } = useGLTF('models/Avatar.glb')
+  const { scene } = useGLTF('./models/Avatar.glb')
   const clone = React.useMemo(() => SkeletonUtils.clone(scene), [scene])
   const { nodes, materials } = useGraph(clone)
 
   const group = useRef<Mesh>(null!)
-  const { animations: typingAnimation } = useFBX("animations/Typing.fbx")
-  const { animations: standingAnimation } = useFBX("animations/Standing.fbx")
-  const { animations: fallingAnimation } = useFBX("animations/Falling.fbx")
+  const { animations: typingAnimation } = useFBX("./animations/Typing.fbx")
+  const { animations: standingAnimation } = useFBX("./animations/Standing.fbx")
+  const { animations: fallingAnimation } = useFBX("./animations/Falling.fbx")
   typingAnimation[0].name = "Typing"
   standingAnimation[0].name = "Standing"
   fallingAnimation[0].name = "Falling"
@@ -66,7 +66,7 @@ export const Avatar = (props: any) => {
   )
 }
 
-useGLTF.preload('models/Avatar.glb')
-useFBX.preload("animations/Typing.fbx")
-useFBX.preload("animations/Standing.fbx")
-useFBX.preload("animations/Falling.fbx")
+useGLTF.preload('./models/Avatar.glb')
+useFBX.preload("./animations/Typing.fbx")
+useFBX.preload("./animations/Standing.fbx")
+useFBX.preload("./animations/Falling.fbx")
