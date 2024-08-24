@@ -9,7 +9,7 @@ Welcome to my personal portfolio website! This project showcases my work as a fr
 - **GSAP**: The animations across the site are powered by GSAP, making the transitions and interactions smooth and engaging.
 
 ## Live Demo
-You can view the live demo of the website [here](https://alireza013013.github.io/portfolio).
+You can view the live demo of the website [here](https://alireza013013-portfolio.netlify.app/).
 
 ## Installation
 
