@@ -1,30 +1,76 @@
-# React + TypeScript + Vite
+# Front-End Developer Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Introduction
+Welcome to my personal portfolio website! This project showcases my work as a front-end developer. It's built using modern web technologies like React, Three.js, and GSAP to provide a smooth and interactive experience.
 
-Currently, two official plugins are available:
+## Features
+- **React**: The project is fully developed with React, providing a fast and scalable web application.
+- **Three.js & React Three Fiber**: For rendering 3D models and scenes, I've used Three.js integrated with React via React Three Fiber.
+- **GSAP**: The animations across the site are powered by GSAP, making the transitions and interactions smooth and engaging.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Live Demo
+You can view the live demo of the website [here](your-live-demo-link).
 
-## Expanding the ESLint configuration
+## Installation
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+To run this project locally, follow these steps:
 
-- Configure the top-level `parserOptions` property like this:
+1. **Clone the repository:**
+    ```bash
+    git clone https://github.com/alireza013013/portfolio.git
+    ```
+2. **Navigate to the project directory:**
+    ```bash
+    cd portfolio
+    ```
+3. **Install the dependencies:**
+    ```bash
+    npm install
+    ```
+4. **Start the development server:**
+    ```bash
+    npm start
+    ```
+5. **Open the project in your browser:**
+    ```bash
+    http://localhost:5173
+    ```
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json', './tsconfig.app.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+## Usage
+Feel free to explore the different sections of the portfolio. You can view my projects, skills, and contact information. The 3D models and animations enhance the user experience, making it more interactive and visually appealing.
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Technologies Used
+- **React**: A JavaScript library for building user interfaces.
+- **React Three Fiber**: A React renderer for Three.js.
+- **Three.js**: A library for creating 3D graphics in the browser.
+- **GSAP (GreenSock Animation Platform)**: A powerful animation library for the web.
+- **HTML5 & CSS3**: Standard web technologies.
+- **JavaScript (ES6+)**: Modern JavaScript features and syntax.
+
+## Contributing
+If you wish to contribute to this project, please follow these steps:
+
+1. Fork the repository.
+2. Create a new branch for your feature or bug fix:
+    ```bash
+    git checkout -b feature-name
+    ```
+3. Commit your changes:
+    ```bash
+    git commit -m 'Add some feature'
+    ```
+4. Push to the branch:
+    ```bash
+    git push origin feature-name
+    ```
+5. Open a pull request.
+
+
+## Contact
+Feel free to reach out if you have any questions or suggestions!
+
+- **Email**: alireza.abdollahi19998@gmail.com
+- **LinkedIn**: [Alireza Abdollahi](https://www.linkedin.com/in/alireza-abdollahi-8869911a8/)
+- **GitHub**: [Alireza Abdollahi](https://github.com/alireza013013)
+
+Thank you for visiting my portfolio!

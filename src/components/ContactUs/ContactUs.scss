@@ -53,6 +53,7 @@
                     padding: 8px 12px;
                     display: flex;
                     align-items: center;
+                    font-family: "Kalam", cursive;
                 }
                 .inputs:focus {
                     outline: none;
@@ -70,6 +71,7 @@
                     padding: 8px 12px;
                     display: flex;
                     align-items: center;
+                    font-family: "Kalam", cursive;
 
                     &::-webkit-calendar-picker-indicator {
                         cursor: pointer;
@@ -108,6 +110,7 @@
                 transition: all;
                 margin-top: 20px;
                 font-weight: bold;
+                font-family: "Kalam", cursive;
                 @include responsive-size(width, 120px, 120px, 80px, 80px);
                 @include responsive-size(height, 40px, 40px, 30px, 30px);
                 @include responsive-size(font-size, 18px, 18px, 14px, 14px);
