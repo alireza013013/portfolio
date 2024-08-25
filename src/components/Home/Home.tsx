@@ -8,7 +8,9 @@ import { ContactUs } from '../../components/ContactUs/ContactUs'
 import { useState } from 'react'
 import menu from "../../assets/menu.svg"
 
-export const Home = () => {
+export const Home = (props: {
+    loaded: boolean
+}) => {
     const [openedNav, setOpenedNav] = useState(false)
 
     return (
@@ -21,9 +23,13 @@ export const Home = () => {
                     <button onClick={() => setOpenedNav(true)} className='menu-button'>
                         <img src={menu} alt="Menu" />
                     </button>
-                    <Introduction isOpen={openedNav} />
+                    {
+                        props.loaded && <Introduction isOpen={openedNav} />
+                    }
                     <Experience />
-                    <Skills />
+                    {
+                        props.loaded && <Skills />
+                    }
                     <Projects />
                     <ContactUs />
                 </div>
