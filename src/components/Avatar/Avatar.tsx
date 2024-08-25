@@ -14,13 +14,9 @@ export const Avatar = (props: any) => {
 
   const group = useRef<Mesh>(null!)
   const { animations: typingAnimation } = useFBX("./animations/Typing.fbx")
-  const { animations: standingAnimation } = useFBX("./animations/Standing.fbx")
-  const { animations: fallingAnimation } = useFBX("./animations/Falling.fbx")
   typingAnimation[0].name = "Typing"
-  standingAnimation[0].name = "Standing"
-  fallingAnimation[0].name = "Falling"
 
-  const { actions } = useAnimations([typingAnimation[0], standingAnimation[0], fallingAnimation[0]], group)
+  const { actions } = useAnimations([typingAnimation[0]], group)
 
   const [animationSelect] = useState("Typing")
 
@@ -68,5 +64,3 @@ export const Avatar = (props: any) => {
 
 useGLTF.preload('./models/Avatar.glb')
 useFBX.preload("./animations/Typing.fbx")
-useFBX.preload("./animations/Standing.fbx")
-useFBX.preload("./animations/Falling.fbx")

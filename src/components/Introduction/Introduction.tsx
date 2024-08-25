@@ -1,6 +1,8 @@
 import { CoodingScene } from './CoodingScene/CoodingScene'
 import './Introduction.scss'
 import { Canvas } from '@react-three/fiber'
+import { Preload } from '@react-three/drei';
+import { Suspense } from 'react';
 import gsap from 'gsap';
 import { useGSAP, } from '@gsap/react';
 import { useRef } from 'react';
@@ -40,7 +42,10 @@ export const Introduction = (props: {
                 <button className='hire' id="button"><a href='#contact'>Hire Me</a></button>
             </div>
             <Canvas id='canvas' resize={{ scroll: false }} shadows camera={{ position: [0, 3, 10.5], fov: 42 }}>
-                <CoodingScene isOpen={props.isOpen} />
+                <Suspense>
+                    <CoodingScene isOpen={props.isOpen} />
+                </Suspense>
+                <Preload all />
             </Canvas>
         </div>
     )

@@ -6,26 +6,27 @@ import playIcon from "../../assets/play-solid.svg"
 import gsap from 'gsap';
 import { useGSAP, } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
-import { Link } from 'react-router-dom'
 gsap.registerPlugin(ScrollTrigger);
 
 export const CardProject = (props: {
     imgSrc: string,
     name: string,
     description: string,
-    id: string
+    id: string,
+    video: string
 }) => {
     return (
-        <Link to={`video/${props.id}`} className='card-project' id={props.id}>
-            <img className='background' src={props.imgSrc} alt="Rent Home" />
+        <div className='card-project' id={props.id}>
+            <img loading='lazy' className='background' src={props.imgSrc} alt="Rent Home" />
             <div className='info-div'>
                 <span className='title'>{props.name}</span>
                 <span className='des'>{props.description}</span>
             </div>
             <button className='circle-play'>
                 <img className='play' src={playIcon} alt="Play" />
+                <a href={props.video} target='_blank'></a>
             </button>
-        </Link>
+        </div>
     )
 }
 
@@ -74,17 +75,23 @@ export const Projects = () => {
                     id='rentHome'
                     imgSrc={rentHome}
                     name='Rent Home'
-                    description='The goal of this project is to display houses and provide the option to rent or buy them.' />
+                    description='The goal of this project is to display houses and provide the option to rent or buy them.'
+                    video='https://drive.google.com/file/d/1dBw7oM07d2wWWP4Id6nuC_DqQoPXL4nz/view?usp=sharing'
+                />
                 <CardProject
                     id='herbal'
                     imgSrc={herbal}
                     name='Sporting goods store'
-                    description='This was a store project where sports products were sold. In this project, in addition to speed, SEO was also very important, and both aspects were successfully achieved.' />
+                    description='This was a store project where sports products were sold. In this project, in addition to speed, SEO was also very important, and both aspects were successfully achieved.'
+                    video='https://drive.google.com/file/d/1PhNETcrTL81CPggsREkFBN2dxJmPagOp/view?usp=sharing'
+                />
                 <CardProject
                     id='spgtel'
                     imgSrc={spgtel}
                     name='Sensor Monitoring'
-                    description='The goal of the project was to register sensors within the system, collect their data, and display it in various tables and charts. ' />
+                    description='The goal of the project was to register sensors within the system, collect their data, and display it in various tables and charts. '
+                    video='https://drive.google.com/file/d/1-4Gn9HqEMI2oezHH4VV61EP2OAwxq56z/view'
+                />
             </div>
 
         </div>
