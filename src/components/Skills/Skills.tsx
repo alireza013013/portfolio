@@ -50,7 +50,7 @@ const BallCanvas = ({ icon }: { icon: string }) => {
 };
 
 
-export const Skills = () => {
+const Skills = () => {
     return (
         <div className="main-skills" id='skills'>
             {technologies.map((technology) => (
@@ -61,3 +61,5 @@ export const Skills = () => {
         </div>
     )
 }
+
+export default Skills;

@@ -7,7 +7,7 @@ import payesh from "../../assets/payesh.jpg"
 
 gsap.registerPlugin(ScrollTrigger);
 
-export const Experience = () => {
+const Experience = () => {
     useGSAP(
         () => {
             gsap.to("#guid", {
@@ -75,3 +75,5 @@ export const Experience = () => {
         </div>
     )
 }
+
+export default Experience

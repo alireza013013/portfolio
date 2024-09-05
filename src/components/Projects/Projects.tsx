@@ -32,7 +32,7 @@ export const CardProject = (props: {
 
 
 
-export const Projects = () => {
+const Projects = () => {
     useGSAP(
         () => {
             gsap.from(['#title', '#description'], {
@@ -97,3 +97,5 @@ export const Projects = () => {
         </div>
     )
 }
+
+export default Projects;

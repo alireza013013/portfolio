@@ -10,6 +10,8 @@ export const Loading = (props: {
     const { progress } = useProgress()
 
     useEffect(() => {
+        console.log(progress);
+
         if (progress === 100) {
             props.setLoaded()
         }

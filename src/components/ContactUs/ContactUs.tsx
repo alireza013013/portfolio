@@ -7,7 +7,7 @@ gsap.registerPlugin(ScrollTrigger);
 import emailjs from '@emailjs/browser';
 import loading from "../../assets/Spinner.svg"
 
-export const ContactUs = () => {
+const ContactUs = () => {
     const [name, setName] = useState("")
     const [email, setEmail] = useState("")
     const [message, setMessage] = useState("")
@@ -136,3 +136,6 @@ export const ContactUs = () => {
         </div>
     )
 }
+
+
+export default ContactUs

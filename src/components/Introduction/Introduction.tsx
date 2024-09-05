@@ -9,7 +9,7 @@ import { useRef } from 'react';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
-export const Introduction = (props: {
+const Introduction = (props: {
     isOpen: boolean
 }) => {
     const contaierTexts = useRef(null!)
@@ -50,3 +50,5 @@ export const Introduction = (props: {
         </div>
     )
 }
+
+export default Introduction;
