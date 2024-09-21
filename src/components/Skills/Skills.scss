@@ -11,5 +11,50 @@
     .ball-container {
         @include responsive-size(width, 150px, 100px, 80px, 60px);
         @include responsive-size(height, 150px, 100px, 80px, 60px);
+
+
+        .wave-container {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            @include responsive-size(width, 150px, 100px, 80px, 60px);
+            @include responsive-size(height, 150px, 100px, 80px, 60px);
+            img{
+                width: 60%;
+                height: 60%;
+                z-index: 2;
+            }
+            .wave {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 0;
+                height: 0;
+                border-radius: 50%;
+                transform: translate(-50%, -50%);
+                animation: wave-animation 2s infinite;
+                opacity: 0;
+            }
+    
+    
+            @keyframes wave-animation {
+                0% {
+                    width: 0;
+                    height: 0;
+                    opacity: 1;
+                }
+                70% {
+                    width: 100%;
+                    height: 100%;
+                    opacity: 0.5;
+                }
+                100% {
+                    width: 100%;
+                    height: 100%;
+                    opacity: 0;
+                }
+            }
+        }
     }
 }
