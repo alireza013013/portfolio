@@ -1,13 +1,11 @@
 import { useFrame, useThree } from '@react-three/fiber'
-import { Avatar } from '../../Avatar/Avatar'
-import { Office } from '../../Office/Office'
-import { useRef } from 'react'
+import Avatar from '../../Avatar/Avatar'
+import Office from '../../Office/Office'
+import { useRef, memo } from 'react'
 import { Mesh } from 'three'
 
 
-export const CoodingScene = (props: {
-    isOpen: boolean
-}) => {
+const CoodingScene = () => {
 
     const { viewport } = useThree()
 
@@ -23,12 +21,11 @@ export const CoodingScene = (props: {
     })
 
 
-
     return (
         <>
             <ambientLight intensity={1} />
             <group ref={avatar} scale={[sceneScaleRatio, sceneScaleRatio, sceneScaleRatio]} rotation={[-3.141592653589793, 1.22, -3.141592653589793]}>
-                <Avatar isOpen={props.isOpen} />
+                <Avatar />
             </group>
             <group position={[isMobile ? 0 : 1.5, isMobile ? -viewport.height / 20 : 0, 3]} scale={[sceneScaleRatio, sceneScaleRatio, sceneScaleRatio]} rotation-y={-Math.PI / 4}>
                 <Office />
@@ -41,3 +38,6 @@ export const CoodingScene = (props: {
         </>
     )
 }
+
+
+export default memo(CoodingScene)

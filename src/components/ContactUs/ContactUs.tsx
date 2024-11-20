@@ -14,6 +14,7 @@ const ContactUs = () => {
     const [isLoading, setIsLoading] = useState(false)
     const [showSuccess, setShowSuccess] = useState(false)
     const [showFail, setShowFail] = useState(false)
+    const [requiredField, setRequiredField] = useState(false)
     const serviceId = "service_2n6q4cm"
     const templateId = "template_jhfda12"
     const publicKey = "MT7allLrE7NHTMkkI"
@@ -65,34 +66,39 @@ const ContactUs = () => {
 
 
     const sendEmail = () => {
-        setIsLoading(true)
-        const templateParams = {
-            from_name: name,
-            to_name: "Alireza Abdollahi",
-            from_email: email,
-            message: message,
-        }
+        if (name.length > 0 && email.length > 0 && message.length > 0) {
+            setRequiredField(false)
+            setIsLoading(true)
+            const templateParams = {
+                from_name: name,
+                to_name: "Alireza Abdollahi",
+                from_email: email,
+                message: message,
+            }
 
-        emailjs.send(serviceId, templateId, templateParams, publicKey)
-            .then(() => {
-                setShowSuccess(true)
-                setIsLoading(false)
-                setName('')
-                setEmail('')
-                setMessage('')
-                setTimeout(() => {
-                    setShowSuccess(false)
-                }, 5000);
-            }).catch(() => {
-                setShowFail(true)
-                setIsLoading(false)
-                setName('')
-                setEmail('')
-                setMessage('')
-                setTimeout(() => {
-                    setShowFail(false)
-                }, 5000);
-            })
+            emailjs.send(serviceId, templateId, templateParams, publicKey)
+                .then(() => {
+                    setShowSuccess(true)
+                    setIsLoading(false)
+                    setName('')
+                    setEmail('')
+                    setMessage('')
+                    setTimeout(() => {
+                        setShowSuccess(false)
+                    }, 5000);
+                }).catch(() => {
+                    setShowFail(true)
+                    setIsLoading(false)
+                    setName('')
+                    setEmail('')
+                    setMessage('')
+                    setTimeout(() => {
+                        setShowFail(false)
+                    }, 5000);
+                })
+        } else {
+            setRequiredField(true)
+        }
     }
 
     return (
@@ -125,6 +131,11 @@ const ContactUs = () => {
                         showSuccess && <span id="success" className='success'>Your Message Send Successfully.</span>}
                     {
                         showFail && <span id="fail" className='error'>Please Try Again Later.</span>}
+
+                    {
+                        requiredField && <span id="fail" className='error'>Please Fill All Input.</span>}
+
+
 
                     <button onClick={sendEmail} className='send' id="button">
                         {

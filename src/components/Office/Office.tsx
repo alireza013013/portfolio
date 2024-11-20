@@ -3,11 +3,11 @@ import * as THREE from "three";
 import { Mesh } from "three"
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
-import { useRef } from "react";
+import { useRef, memo } from "react";
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
-export const Office = (props: any) => {
+const Office = (props: any) => {
   const { nodes } = useGLTF("./models/scene.gltf");
   const texture = useTexture("./textures/baked.jpg");
   const textureVSCode = useVideoTexture("./textures/vscode.mp4");
@@ -37,7 +37,6 @@ export const Office = (props: any) => {
   const keyboard = useRef(null!)
   const imac = useRef(null!)
 
-
   useGSAP(
     () => {
       const tl = gsap.timeline({
@@ -50,7 +49,7 @@ export const Office = (props: any) => {
       });
       tl.from((office.current as Mesh).position,
         {
-          x: 100, y: 0, z: 0, duration: 1, ease: "back.out(0.6)",
+          x: 100, y: 0, z: 0, duration: 1, ease: "back.out(0.6)"
         })
         .from([(desk.current as Mesh).scale,
         (tree.current as Mesh).scale,
@@ -342,4 +341,7 @@ export const Office = (props: any) => {
 }
 
 useGLTF.preload("./models/scene.gltf");
-useTexture.preload("./textures/baked.jpg");
+// useTexture.preload("./textures/baked.jpg");
+
+
+export default memo(Office)

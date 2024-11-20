@@ -34,9 +34,9 @@ export const Navbar = (props: {
     return (
         <div className='header'>
             <div className='menu' id="menu">
-                <div className='close-button' onClick={handleClose}>
+                <button className='close-button' onClick={handleClose}>
                     <img src={close} alt="Close" />
-                </div>
+                </button>
 
                 <div className='menu-item'>
                     <a onClick={handleClose} className='item' id='nav-home' href={"#home"}>Home</a>

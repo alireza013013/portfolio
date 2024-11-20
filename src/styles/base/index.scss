@@ -1,10 +1,5 @@
 :root {
   font-family: "Kalam", cursive;
-  // font-family: "Indie Flower", cursive;
-  // font-family: "New Amsterdam", sans-serif;
-
-  // font-family: "New Amsterdam", sans-serif;
-  // font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
   font-synthesis: none;
@@ -20,4 +15,15 @@ body {
   overflow-x: hidden;
   max-width: 100%;
   scroll-behavior: smooth;
+}
+
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+img {
+  -webkit-tap-highlight-color: transparent;
+}
+
+a {
+  -webkit-tap-highlight-color: transparent;
 }

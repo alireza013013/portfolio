@@ -19,14 +19,24 @@
         flex-direction: column;
         padding: 10px 20px;
         .close-button {
-            width: 100%;
+            width: fit-content;
             display: flex;
-            justify-content: flex-end;
+            justify-content: flex-start;
             cursor: pointer;
+            -webkit-tap-highlight-color: transparent;
+            border: none;
+            background-color: transparent;
+            float: right;
+            position: absolute;
+            right: 10px;
             img {
+                -webkit-tap-highlight-color: transparent;
                 width: 30px;
                 height: 30px;
                 filter: invert(32%) sepia(89%) saturate(1348%) hue-rotate(221deg) brightness(84%) contrast(89%);
+            }
+            &:active {
+                transform: scale(0.96);
             }
         }
 

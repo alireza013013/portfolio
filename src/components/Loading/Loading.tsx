@@ -2,6 +2,8 @@ import { useProgress } from "@react-three/drei"
 import { useEffect } from "react"
 import './Loading.scss'
 
+
+
 export const Loading = (props: {
     loaded: boolean,
     setLoaded: () => void
@@ -10,8 +12,6 @@ export const Loading = (props: {
     const { progress } = useProgress()
 
     useEffect(() => {
-        console.log(progress);
-
         if (progress === 100) {
             props.setLoaded()
         }

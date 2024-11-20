@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { memo, useEffect, useRef, useState } from 'react'
 import { useGraph } from '@react-three/fiber'
 import { useAnimations, useFBX, useGLTF } from '@react-three/drei'
 import { SkeletonUtils } from 'three-stdlib'
@@ -7,27 +7,23 @@ import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 
 
-export const Avatar = (props: any) => {
+const Avatar = (props: any) => {
   const { scene } = useGLTF('./models/Avatar.glb')
   const clone = React.useMemo(() => SkeletonUtils.clone(scene), [scene])
   const { nodes, materials } = useGraph(clone)
 
   const group = useRef<Mesh>(null!)
   const { animations: typingAnimation } = useFBX("./animations/Typing.fbx")
+
   typingAnimation[0].name = "Typing"
 
   const { actions } = useAnimations([typingAnimation[0]], group)
 
   const [animationSelect] = useState("Typing")
 
-
   useEffect(() => {
     actions[animationSelect]?.reset().play()
-    return () => {
-      actions[animationSelect]?.reset()
-    }
-  }, [animationSelect, props.isOpen])
-
+  }, [])
 
   useGSAP(
     () => {
@@ -64,3 +60,6 @@ export const Avatar = (props: any) => {
 
 useGLTF.preload('./models/Avatar.glb')
 useFBX.preload("./animations/Typing.fbx")
+
+
+export default memo(Avatar);
