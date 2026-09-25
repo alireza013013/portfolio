@@ -4,6 +4,7 @@ import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import './Experience.scss'
 import nitc from "../../assets/nitc.jpg"
 import payesh from "../../assets/payesh.jpg"
+import gamatrain from "../../assets/gamatrain.png"
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -43,6 +44,17 @@ const Experience = () => {
                 }
             })
 
+            gsap.from("#gama", {
+                opacity: 0,
+                y: 100,
+                duration: 5,
+                scrollTrigger: {
+                    trigger: "#experience",
+                    start: "top 50%",
+                    end: "center end",
+                    scrub: 1,
+                }
+            })
         },
     );
 
@@ -71,6 +83,17 @@ const Experience = () => {
                 </div>
                 <span className='position'>Full Stack Developer Payesh Ghodrat</span>
                 <span className='desc'>Development of a project to manage mechanical sensors including admin panel and user panel, and a SPA compatible with 100% device sizes.</span>
+            </div>
+
+            <div className='card-experience gama' id='gama'>
+                <div className='circle'>
+                </div>
+                <div className='date-logo'>
+                    <img src={gamatrain} alt="GAMATRAIN LOGO" />
+                    <span className='date'>Apr 2025 - Present</span>
+                </div>
+                <span className='position'>Frontend & Three.js Developer</span>
+                <span className='desc'>Contributed to migrating a production project from Nuxt 2 to Nuxt 4, improving maintainability, scalability, and compatibility with the modern Nuxt ecosystem.</span>
             </div>
         </div>
     )

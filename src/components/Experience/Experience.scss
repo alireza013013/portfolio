@@ -80,4 +80,12 @@
             @include responsive-size(left, -32px, -32px, -32px, -26px);
         }
     }
+    .gama {
+        @include responsive-size(margin-left, -460px, -380px, -290px, 0);
+        .circle {
+            top: -2px;
+            @include responsive-size(left, unset, unset, unset, -26px);
+            @include responsive-size(right, -32px, -32px, -32px, unset);
+        }
+    }
 }
