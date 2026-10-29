@@ -8,12 +8,12 @@ import youtube from "../../assets/youtube.svg"
 import React from 'react';
 import { useLocation } from 'react-router-dom';
 
-const Skills = React.lazy(() => import('../../components/Skills/Skills'));
-const Projects = React.lazy(() => import('../../components/Projects/Projects'));
-const Experience = React.lazy(() => import('../../components/Experience/Experience'));
-const ContactUs = React.lazy(() => import('../../components/ContactUs/ContactUs'));
-import Introduction from '../../components/Introduction/Introduction';
-import { Loading } from '../Loading/Loading';
+const Skills = React.lazy(() => import('../../components/Home/Skills/Skills'));
+const Projects = React.lazy(() => import('../../components/Home/Projects/Projects'));
+const Experience = React.lazy(() => import('../../components/Home/Experience/Experience'));
+const ContactUs = React.lazy(() => import('../../components/Home/ContactUs/ContactUs'));
+import Introduction from '../../components/Home/Introduction/Introduction';
+import { Loading } from '../../components/Home/Loading/Loading';
 
 
 const Home = () => {

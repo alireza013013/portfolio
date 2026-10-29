@@ -5,7 +5,7 @@ import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import { useState } from 'react';
 gsap.registerPlugin(ScrollTrigger);
 import emailjs from '@emailjs/browser';
-import loading from "../../assets/Spinner.svg"
+import loading from "../../../assets/Spinner.svg"
 
 const ContactUs = () => {
     const [name, setName] = useState("")

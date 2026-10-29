@@ -2,9 +2,9 @@ import gsap from 'gsap';
 import { useGSAP, } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import './Experience.scss'
-import nitc from "../../assets/nitc.jpg"
-import payesh from "../../assets/payesh.jpg"
-import gamatrain from "../../assets/gamatrain.png"
+import nitc from "../../../assets/nitc.jpg"
+import payesh from "../../../assets/payesh.jpg"
+import gamatrain from "../../../assets/gamatrain.png"
 
 gsap.registerPlugin(ScrollTrigger);
 

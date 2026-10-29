@@ -1,5 +1,5 @@
 import './Skills.scss'
-import { technologies } from '../../constants'
+import { technologies } from '../../../constants'
 
 
 const Ball = ({ icon, color, randomDelay }: { icon: string, color: string, randomDelay: number }) => {

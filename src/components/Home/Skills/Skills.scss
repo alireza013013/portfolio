@@ -1,4 +1,4 @@
-@import "../../styles/references/index";
+@import "../../../styles/references/index";
 
 .main-skills {
     width: 90%;
@@ -12,7 +12,6 @@
         @include responsive-size(width, 150px, 100px, 80px, 60px);
         @include responsive-size(height, 150px, 100px, 80px, 60px);
 
-
         .wave-container {
             position: relative;
             display: flex;
@@ -20,7 +19,7 @@
             justify-content: center;
             @include responsive-size(width, 150px, 100px, 80px, 60px);
             @include responsive-size(height, 150px, 100px, 80px, 60px);
-            img{
+            img {
                 width: 60%;
                 height: 60%;
                 z-index: 2;
@@ -36,8 +35,7 @@
                 animation: wave-animation 2s infinite;
                 opacity: 0;
             }
-    
-    
+
             @keyframes wave-animation {
                 0% {
                     width: 0;

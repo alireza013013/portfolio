@@ -1,8 +1,8 @@
 import './Projects.scss'
-import rentHome from "../../assets/projects/rentHome.png"
-import spgtel from "../../assets/projects/spgtel.png"
-import herbal from "../../assets/projects/herbal.png"
-import playIcon from "../../assets/play-solid.svg"
+import rentHome from "../../../assets/projects/rentHome.png"
+import spgtel from "../../../assets/projects/spgtel.png"
+import herbal from "../../../assets/projects/herbal.png"
+import playIcon from "../../../assets/play-solid.svg"
 import gsap from 'gsap';
 import { useGSAP, } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
